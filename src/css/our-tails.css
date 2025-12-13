@@ -1,3 +1,7 @@
 .tails-cont {
   background-color: burlywood;
 }
+svg {
+  fill: blue;
+  stroke: chartreuse;
+}

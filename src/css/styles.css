@@ -9,4 +9,10 @@
 @import url('./our-tails.css');
 @import url('./activity.css');
 @import url('./question.css');
+@import url('./feedback.css');
 @import url('./footer.css');
+
+/*Modal and menu style*/
+@import url('./mob-menu.css');
+@import url('./modal-card.css');
+@import url('./modal-input.css');

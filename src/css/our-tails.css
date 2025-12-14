@@ -92,6 +92,13 @@
   line-height: 1.5;
   color: var(--color-neutral-darkest);
 }
+.tails-gallery-span-m {
+  margin-right: 16px;
+}
+.tails-gallery-span {
+  font-size: 10px;
+  line-height: 1.5;
+}
 .tails-load-more {
   border: 1px solid var(--color-mariner-dark);
   display: flex;

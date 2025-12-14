@@ -101,10 +101,13 @@ function tailsRenderCards(arr) {
     item.append(categorys);
 
     const age = document.createElement('span');
+    age.classList.add('tails-gallery-span');
+    age.classList.add('tails-gallery-span-m');
     age.textContent = elem.age;
     item.append(age);
 
     const gen = document.createElement('span');
+    gen.classList.add('tails-gallery-span');
     gen.textContent = elem.gender;
     item.append(gen);
 

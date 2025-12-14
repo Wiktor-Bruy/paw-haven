@@ -1,3 +1,146 @@
+.footer {
+  background-color: var(--color-scheme-2-background);
+
+  flex: none;
+  align-self: stretch;
+  height: auto;
+  min-height: unset;
+}
+
 .footer-cont {
-  background-color: #41d1ff;
+  display: block;
+  text-align: center;
+  color: var(--color-scheme-1-text);
+}
+
+/* лого */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.footer-logo-icon {
+  display: block;
+  width: 302px;
+  height: 129.43px;
+  max-width: 100%;
+}
+
+/*  навігація  */
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.footer-nav-item {
+  width: fit-content;
+}
+
+.footer-nav-link {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--color-neutral-darkest);
+  text-decoration: none;
+}
+
+/* hover / focus */
+.footer-nav-link:hover,
+.footer-nav-link:focus-visible {
+  color: var(--color-neutral-darkest);
+  text-decoration: underline;
+  text-decoration-color: var(--color-mariner-dark);
+  text-underline-offset: 4px;
+}
+
+/* active */
+.footer-nav-link:active {
+  color: var(--color-mariner-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--color-mariner-dark);
+}
+
+/* соцмережі */
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-social-link {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  opacity: 0.7;
+}
+
+/* Розділювач */
+.footer-divider {
+  border-top: 1px solid var(--color-scheme-1-border);
+  margin: 24px 0;
+}
+
+/* Авторське право */
+.footer-copy-cont {
+  text-align: center;
+  padding-bottom: 24px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--color-scheme-1-text);
+}
+
+/* гумова (320–374) */
+@media (max-width: 374.98px) {
+  .footer-cont {
+    padding: 40px 0;
+  }
+}
+
+/*  mobile (375–767) */
+@media (min-width: 375px) and (max-width: 767.98px) {
+  .footer-cont {
+    padding: 48px 0;
+  }
+}
+
+/*  tablet (768–1439)  */
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .footer-cont {
+    padding: 56px 0;
+  }
+
+  .footer-nav-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+/*  desktop (1440+)  */
+@media (min-width: 1440px) {
+  .footer-cont {
+    padding: 64px 0;
+  }
+
+  .footer-nav-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
 }

@@ -1,3 +1,155 @@
-.question-cont {
-  background-color: yellowgreen;
+/* ==section===== */
+.question {
+  background-color: var(--color-mariner-lightest);
+  padding: 64px 0;
 }
+
+/* =title ===== */
+.question-name {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+/* ==list ===== */
+.question-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===item ===== */
+.question-item {
+  background-color: #eee9e3;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.question-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.question-item.active .question-answer {
+  max-height: 500px; /* або 1000px */
+}
+
+/* ==text ===== */
+.question-text {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-neutral-darkest);
+}
+
+.answer-list-text{
+  padding-bottom:16px;
+}
+.answer-steps {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.answer-steps li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.answer-list {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.answer-list li {
+  list-style: disc;
+  margin-bottom: 8px;
+}
+
+.question-icon {
+  transition: transform 0.3s ease;
+}
+
+.question-item.active .question-icon {
+  transform: rotate(45deg);
+}
+
+
+@media screen and (min-width: 768px) {
+  .question {
+    padding: 80px 0;
+  }
+
+  .question-name {
+    font-size: 44px;
+    margin-bottom: 48px;
+  }
+
+  .question-item {
+    padding: 24px;
+  }
+
+  .question-text {
+    font-size: 18px;
+  }
+
+  .question-answer {
+    font-size: 16px;
+  }
+
+  .answer-steps,
+  .answer-list {
+    padding-left: 24px;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  .question {
+    padding: 100px 0;
+  }
+
+  .question-name {
+    font-size: 48px;
+    margin-bottom: 56px;
+  }
+
+  .question-list {
+    gap: 20px;
+  }
+
+  .question-item {
+    padding: 28px 32px;
+  }
+
+  .question-header {
+    gap: 32px;
+  }
+
+  .question-text {
+    font-size: 18px;
+    max-width: 80%;
+  }
+
+  .question-answer {
+    max-width: 80%;
+  }
+}
+
+@media (hover: hover) {
+  .question-header:hover {
+    opacity: 0.85;
+  }
+}
+
+

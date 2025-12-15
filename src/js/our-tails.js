@@ -1,11 +1,13 @@
 import axios from 'axios';
 
 //-----------------------------------------------------------------Глобальні-змінні
-let tailsPage = 1;
-let tailsSearchParams = new URLSearchParams({
+const tailsBtnLoad = document.querySelector('.tails-load-more');
+let tailsTotalPage;
+let tailsTotalItems;
+let tailsSearchParams = {
   page: 1,
   limit: 8,
-});
+};
 //---------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------Функції
@@ -47,17 +49,30 @@ function tailsRenderCategories(arr) {
 
 //---------------------------------------------------------------------Запит-карток
 function tailsGetArrAnimals() {
+  tailsToggleLoader();
+  const serarchParams = new URLSearchParams({
+    ...tailsSearchParams,
+  });
   axios
-    .get(`https://paw-hut.b.goit.study/api/animals?${tailsSearchParams}`)
+    .get(`https://paw-hut.b.goit.study/api/animals?${serarchParams}`)
     .then(res => {
       const arrAnimals = res.data.animals;
       tailsRenderCards(arrAnimals);
+      tailsToggleLoader();
+      tailsTotalItems = res.data.totalItems;
+      tailsTotalPage = Math.ceil(tailsTotalItems / tailsSearchParams.limit);
+      if (tailsSearchParams.page >= tailsTotalPage) {
+        tailsBtnLoad.classList.add('tails-none');
+      } else {
+        tailsBtnLoad.classList.remove('tails-none');
+      }
     })
-    .catch(er =>
+    .catch(er => {
       alert(
         `Вибачте, за сталася помилка в запиті карток ${er}. Спробуйте оновити сторінку.`
-      )
-    );
+      );
+      tailsToggleLoader();
+    });
 }
 
 //--------------------------------------------------------------------Рендер-карток
@@ -112,10 +127,12 @@ function tailsRenderCards(arr) {
     item.append(gen);
 
     const descr = document.createElement('p');
+    descr.classList.add('tails-gallery-text');
     descr.textContent = elem.shortDescription;
     item.append(descr);
 
     const btn = document.createElement('button');
+    btn.classList.add('tails-know-more');
     btn.type = 'button';
     btn.textContent = 'Дізнвтися більше';
     btn.setAttribute('data-obj', JSON.stringify(elem));
@@ -128,8 +145,76 @@ function tailsRenderCards(arr) {
   cardList.append(...gallery);
 }
 
+//----------------------------------------------------------------Клік-по-категорії
+function tailsOnClickCategori(event) {
+  const elem = event.target;
+  if (elem.tagName !== 'BUTTON') {
+    return;
+  }
+
+  const gallery = document.querySelector('.tails-gallery');
+  gallery.innerHTML = '';
+
+  if (elem.dataset.id === undefined) {
+    delete tailsSearchParams.categoryId;
+    tailsSearchParams.page = 1;
+    tailsGetArrAnimals();
+  } else {
+    tailsSearchParams.categoryId = elem.dataset.id;
+    tailsSearchParams.page = 1;
+    tailsGetArrAnimals();
+  }
+
+  const btnList = document.querySelectorAll('.tails-select');
+  btnList.forEach(el => el.classList.remove('tails-select-active'));
+  elem.classList.add('tails-select-active');
+}
+
+//-------------------------------------------------------------------Завантажити-ще
+function onClickLoadMore() {
+  tailsSearchParams.page += 1;
+
+  tailsToggleLoader();
+
+  const serarchParams = new URLSearchParams({
+    ...tailsSearchParams,
+  });
+  axios
+    .get(`https://paw-hut.b.goit.study/api/animals?${serarchParams}`)
+    .then(res => {
+      const arrAnimals = res.data.animals;
+      tailsRenderCards(arrAnimals);
+      tailsToggleLoader();
+    })
+    .catch(er => {
+      alert(
+        `Вибачте, за сталася помилка в запиті карток ${er}. Спробуйте оновити сторінку.`
+      );
+      tailsToggleLoader();
+    });
+
+  if (tailsSearchParams.page === tailsTotalPage) {
+    tailsBtnLoad.classList.add('tails-none');
+  }
+}
+
+//----------------------------------------------------Відкриття-та-закриття-лоадера
+function tailsToggleLoader() {
+  const loader = document.querySelector('.tails-loader');
+  loader.classList.toggle('tails-none');
+}
+
 //---------------------------------------------------------------------------------
 
 //------------------------------------------------------------------Загальна-логікa
+//----------------------------------------------------------------Початковий-рендер
 tailsGetCategories();
 tailsGetArrAnimals();
+
+//------------------------------------------------------------------Вибір-категорії
+const tailsCategories = document.querySelector('.tails-button-list');
+tailsCategories.addEventListener('click', tailsOnClickCategori);
+
+//-------------------------------------------------------------------Завантажити-ще
+tailsBtnLoad.addEventListener('click', onClickLoadMore);
+//---------------------------------------------------------------------------------

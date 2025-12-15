@@ -43,6 +43,9 @@
 .tails-select:focus {
   text-decoration: underline;
 }
+.tails-select:active {
+  color: var(--color-mariner-dark);
+}
 .tails-select-active {
   background-color: var(--color-scheme-1-foreground);
 }
@@ -99,6 +102,32 @@
   font-size: 10px;
   line-height: 1.5;
 }
+.tails-gallery-text {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.tails-know-more {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-neutral-darkest);
+  border-radius: 8px;
+  line-height: 1.5;
+  color: var(--color-neutral-darkest);
+  transition: background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+.tails-know-more:hover,
+.tails-know-more:focus {
+  background-color: var(--color-mariner-light);
+}
+.tails-know-more:active {
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
 .tails-load-more {
   border: 1px solid var(--color-mariner-dark);
   display: flex;
@@ -124,3 +153,50 @@
   box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
+.tails-none {
+  display: none;
+}
+
+/*----------------------------------------------------------------------------Loader*/
+.tails-loader,
+.tails-loader:before,
+.tails-loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.tails-loader {
+  color: #000000;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+  margin: 0 auto;
+}
+.tails-loader:before,
+.tails-loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.tails-loader:before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+.tails-loader:after {
+  left: 3.5em;
+}
+@keyframes bblFadInOut {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+/*----------------------------------------------------------------------------Loader*/

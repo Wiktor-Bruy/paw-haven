@@ -1,10 +1,3 @@
-const items = document.querySelectorAll('.question-item');
-
-items.forEach(item => {
-  const header = item.querySelector('.question-header');
-
-  header.addEventListener('click', () => {
-    item.classList.toggle('active');
-  });
-});
-
+import Accordion from 'accordion-js';
+import 'accordion-js/dist/accordion.min.css';
+new Accordion('.question-list');

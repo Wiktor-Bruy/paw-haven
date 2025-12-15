@@ -1,5 +1,11 @@
-.question-header {
-  background-color: aqua;
-  font-weight: 700;
-  font-size: 80px;
+.question-list .ac .ac-header .ac-trigger::after {
+  content: url(/public/plus.svg);
+}
+.question-list > .ac.is-active > .ac-header .ac-trigger::after {
+  content: url(/public/close.svg);
+}
+
+.question-list .question-item .question-header .question-text {
+  font-weight: 400;
+  font-size: 40px;
 }

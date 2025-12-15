@@ -88,6 +88,7 @@ function tailsRenderCards(arr) {
     const img = document.createElement('img');
     img.src = elem.image;
     img.alt = elem.name;
+    img.loading = 'lazy';
     div.append(img);
     item.append(div);
 
@@ -216,6 +217,11 @@ function tailsKnowMore(event) {
 
 //------------------------------------------------------------------Загальна-логікa
 //----------------------------------------------------------------Початковий-рендер
+const tailsWindov = window.innerWidth;
+if (tailsWindov >= 1440) {
+  tailsSearchParams.limit = 9;
+}
+
 tailsGetCategories();
 tailsGetArrAnimals();
 

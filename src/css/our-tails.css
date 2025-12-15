@@ -116,6 +116,7 @@
   justify-content: center;
   border: 1px solid var(--color-neutral-darkest);
   border-radius: 8px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--color-neutral-darkest);
   transition: background-color 250ms ease-in-out, box-shadow 250ms ease-in-out;
@@ -200,3 +201,36 @@
   }
 }
 /*----------------------------------------------------------------------------Loader*/
+
+/*----------------------------------------------------------------------------Tablet*/
+@media (min-width: 768px) {
+  .tails-button-list {
+    gap: 0;
+  }
+  .tails-select {
+    font-weight: 400;
+  }
+  .tails-gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .tails-gallery-item {
+    width: calc((100% - 32px) / 2);
+  }
+}
+
+@media (min-width: 1440px) {
+  .our-tails {
+    padding-top: 80px;
+  }
+  .tails-title {
+    font-size: 48px;
+  }
+  .tails-sub-title {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .tails-gallery-item {
+    width: calc((100% - 64px) / 3);
+  }
+}

@@ -1,44 +1,43 @@
-.footer {
+.footer,
+.footer-bg {
+  width: 100%;
   background-color: var(--color-scheme-2-background);
-
-  flex: none;
-  align-self: stretch;
-  height: auto;
-  min-height: unset;
 }
 
 .footer-cont {
-  display: block;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   color: var(--color-scheme-1-text);
 }
 
 /* лого */
 .footer-logo {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  margin-bottom: 24px;
   text-decoration: none;
+  margin-bottom: 32px;
 }
 
 .footer-logo-icon {
-  display: block;
   width: 302px;
   height: 129.43px;
-  max-width: 100%;
 }
 
-/*  навігація  */
+/* навігація */
 .footer-nav-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
-}
-
-.footer-nav-item {
-  width: fit-content;
+  margin-bottom: 32px;
 }
 
 .footer-nav-link {
@@ -50,27 +49,22 @@
   text-decoration: none;
 }
 
-/* hover / focus */
 .footer-nav-link:hover,
 .footer-nav-link:focus-visible {
-  color: var(--color-neutral-darkest);
   text-decoration: underline;
   text-decoration-color: var(--color-mariner-dark);
   text-underline-offset: 4px;
 }
 
-/* active */
 .footer-nav-link:active {
   color: var(--color-mariner-dark);
-  text-decoration: underline;
-  text-decoration-color: var(--color-mariner-dark);
 }
 
-/* соцмережі */
+/* соц.лінки */
 .footer-socials {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 .footer-social-link {
@@ -86,16 +80,16 @@
   opacity: 0.7;
 }
 
-/* Розділювач */
+/* розділювач */
 .footer-divider {
   border-top: 1px solid var(--color-scheme-1-border);
-  margin: 24px 0;
+  margin: 48px 0 32px;
 }
 
-/* Авторське право */
+/* авт.права */
 .footer-copy-cont {
   text-align: center;
-  padding-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 .footer-copy {
@@ -104,43 +98,40 @@
   color: var(--color-scheme-1-text);
 }
 
-/* гумова (320–374) */
-@media (max-width: 374.98px) {
-  .footer-cont {
-    padding: 40px 0;
+/* гума (до 374) */
+@media (max-width: 374px) {
+  .footer-inner {
+    padding: 40px 20px;
   }
 }
 
-/*  mobile (375–767) */
-@media (min-width: 375px) and (max-width: 767.98px) {
-  .footer-cont {
-    padding: 48px 0;
+/* мобайл (375–767) */
+@media (min-width: 375px) and (max-width: 767px) {
+  .footer-inner {
+    padding: 48px 20px;
   }
 }
 
-/*  tablet (768–1439)  */
-@media (min-width: 768px) and (max-width: 1439.98px) {
-  .footer-cont {
-    padding: 56px 0;
+/* планшет (768–1439) */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .footer-inner {
+    padding: 64px 32px;
   }
 
   .footer-nav-list {
     flex-direction: row;
-    justify-content: center;
     gap: 32px;
-    margin-bottom: 24px;
   }
 }
 
-/*  desktop (1440+)  */
+/* десктоп (1440+)  */
 @media (min-width: 1440px) {
-  .footer-cont {
-    padding: 64px 0;
+  .footer-inner {
+    padding: 64px;
   }
 
   .footer-nav-list {
     flex-direction: row;
-    justify-content: center;
     gap: 32px;
   }
 }

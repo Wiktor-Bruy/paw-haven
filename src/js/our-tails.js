@@ -204,6 +204,14 @@ function tailsToggleLoader() {
   loader.classList.toggle('tails-none');
 }
 
+//---------------------------------------------------------Відкриття-модалки-картки
+function tailsKnowMore(event) {
+  const elem = event.target;
+  if (elem.tagName !== 'BUTTON') {
+    return;
+  }
+  console.log(JSON.parse(elem.dataset.obj));
+}
 //---------------------------------------------------------------------------------
 
 //------------------------------------------------------------------Загальна-логікa
@@ -217,4 +225,8 @@ tailsCategories.addEventListener('click', tailsOnClickCategori);
 
 //-------------------------------------------------------------------Завантажити-ще
 tailsBtnLoad.addEventListener('click', onClickLoadMore);
+
+//----------------------------------------------------------Відкрити-модалку-картки
+const tailsGallery = document.querySelector('.tails-gallery');
+tailsGallery.addEventListener('click', tailsKnowMore);
 //---------------------------------------------------------------------------------

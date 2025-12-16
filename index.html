@@ -16,7 +16,9 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
     <script type="module" crossorigin src="/paw-haven/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-BFq6oGb8.css">
+    <link rel="modulepreload" crossorigin href="/paw-haven/assets/vendor-B5UTuJSL.js">
+    <link rel="stylesheet" crossorigin href="/paw-haven/assets/vendor-DnGaGgwy.css">
+    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-CuTJRh94.css">
   </head>
   <body>
     <header class="header" id="head">
@@ -73,10 +75,29 @@
 
       <section class="feedback" id="feedb">
   <div class="container feedback-cont">
-    <!-- тут пропишете вміст секції, коментар можна видалити.
-     якщо будуть потрібні корективи до стилів контейнера, звертайтеся до класу - feedback-cont
-     щоб не збити контейнер в інших секціях-->
-    <p>feedback</p>
+    <h2 class="feedback-title">Щасливі історії, що надихають</h2>
+    <p class="feedback-text">
+      Ці хвостики вже знайшли свій дім. Ваш майбутній друг теж чекає на вас
+    </p>
+    <div class="swiper feedback-swiper">
+      <span class="loader feedback-loader hidden"></span>
+      <div class="swiper-wrapper feedback-swiper-wrapper"></div>
+    </div>
+    <div class="feedback-controls">
+      <div class="swiper-pagination" id="swiper-pagination"></div>
+      <div class="feedback-navigation">
+        <div class="swiper-button-prev">
+          <svg class="feedback-swiper-icon" width="24" height="24">
+            <use href="../img/icons.svg#arrow-left"></use>
+          </svg>
+        </div>
+        <div class="swiper-button-next">
+          <svg class="feedback-swiper-icon" width="24" height="24">
+            <use href="../img/icons.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

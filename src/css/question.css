@@ -1,8 +1,8 @@
 .question-list .ac .ac-header .ac-trigger::after {
-  content: url(/public/plus.svg);
+  content: url(/img/icons/plus.svg);
 }
 .question-list > .ac.is-active > .ac-header .ac-trigger::after {
-  content: url(/public/close.svg);
+  content: url(/img/icons/close.svg);
 }
 
 .question-list .question-item .question-header .question-text {

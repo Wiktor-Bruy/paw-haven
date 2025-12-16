@@ -56,6 +56,9 @@
   margin-bottom: 40px;
 }
 .tails-gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-scheme-1-foreground);
   border-radius: 16px;
   padding: 12px;

@@ -116,16 +116,20 @@ function tailsRenderCards(arr) {
     categorys.append(...listCategorys);
     item.append(categorys);
 
+    const spans = document.createElement('div');
+
     const age = document.createElement('span');
     age.classList.add('tails-gallery-span');
     age.classList.add('tails-gallery-span-m');
     age.textContent = elem.age;
-    item.append(age);
+    spans.append(age);
 
     const gen = document.createElement('span');
     gen.classList.add('tails-gallery-span');
     gen.textContent = elem.gender;
-    item.append(gen);
+    spans.append(gen);
+
+    item.append(spans);
 
     const descr = document.createElement('p');
     descr.classList.add('tails-gallery-text');

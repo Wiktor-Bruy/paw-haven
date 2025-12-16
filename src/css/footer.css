@@ -28,7 +28,7 @@
 
 .footer-logo-icon {
   width: 302px;
-  height: 129.43px;
+  height: 129px;
 }
 
 /* навігація */
@@ -105,14 +105,14 @@
   }
 }
 
-/* мобайл (375–767) */
+/* мобайл (375-767) */
 @media (min-width: 375px) and (max-width: 767px) {
   .footer-inner {
     padding: 48px 20px;
   }
 }
 
-/* планшет (768–1439) */
+/* планшет (768-1439) */
 @media (min-width: 768px) and (max-width: 1439px) {
   .footer-inner {
     padding: 64px 32px;

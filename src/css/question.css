@@ -1,3 +1,102 @@
-.question-cont {
-  background-color: yellowgreen;
+/*---------------------------------------------------------------------------mobile*/
+
+.question {
+  background-color: var(--color-scheme-1-background);
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.question-name {
+  font-family: var(--second-family);
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.question-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.question-item {
+  padding: 20px 24px;
+}
+.question-list .question-item {
+  background-color: var(--color-scheme-1-foreground);
+}
+.question-list .question-item .question-header .question-text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
+.answer-list-text {
+  margin-bottom: 16px;
+}
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.answer-list-item {
+  position: relative;
+  padding-left: 20px;
+}
+.question-list-style {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  display: block;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-scheme-1-text);
+}
+.answer-list-text-m {
+  margin-top: 16px;
+}
+.answer-finish-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.question-list .question-item .question-answer .ac-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-scheme-1-text);
+}
+
+/*---------------------------------------------------------------------------tablet*/
+.question-name {
+  margin-bottom: 80px;
+}
+
+/*---------------------------------------------------------------------------laptop*/
+.question {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.question-name {
+  font-size: 48px;
+}
+.question-list {
+  margin: 0 auto;
+  max-width: 864px;
+}
+.question-list .question-item .question-header .question-text {
+  font-size: 18px;
+}
+.question-list .question-item .question-answer .ac-text {
+  font-size: 16px;
+}
+
+/*------------------------------------------------------------------icons-from-list*/
+.question-list .ac .ac-header .ac-trigger::after {
+  content: url(/img/icons/plus.svg);
+}
+.question-list > .ac.is-active > .ac-header .ac-trigger::after {
+  content: url(/img/icons/close.svg);
 }

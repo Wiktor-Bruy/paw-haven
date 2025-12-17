@@ -75,19 +75,19 @@
   list-style: none;
   margin-top: 64px;
   border: 1px solid var(--color-mariner-dark);
-    border-radius: 8px;
-    padding: 8px 20px;
-    width: 335px;
-    background: var(--color-mariner-dark);
-    text-align: center;
+  border-radius: 8px;
+  padding: 8px 20px;
+  width: 335px;
+  background: var(--color-mariner-dark);
+  text-align: center;
 }
 
 .nav-link-exp {
   font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: var(--color-white);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--color-white);
 }
 
 .nav-link-exp:focus,
@@ -107,9 +107,15 @@ body.menu-open {
   .mobile-menu-bloc {
     text-align: center;
   }
-  
+
   .nav-exp {
     margin: 0 auto;
     margin-top: 72px;
   }
- }
+}
+
+@media (min-width: 1440px) {
+  .mobile-menu {
+    display: none;
+  }
+}

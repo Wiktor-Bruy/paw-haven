@@ -18,17 +18,57 @@
     <script type="module" crossorigin src="/paw-haven/index.js"></script>
     <link rel="modulepreload" crossorigin href="/paw-haven/assets/vendor-DlRMHGXh.js">
     <link rel="stylesheet" crossorigin href="/paw-haven/assets/vendor-DnGaGgwy.css">
-    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-Cx-9C2-M.css">
+    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-D2QwE1mq.css">
   </head>
   <body>
-    <header class="header" id="head">
-  <div class="container header-cont">
-    <!-- тут пропишете вміст хедера, коментар можна видалити.
-     якщо будуть потрібні корективи до стилів контейнера, звертайтеся до класу - header-cont
-     щоб не збити контейнер в інших секціях-->
-    <p>Header</p>
-  </div>
-</header>
+    <body>
+  <header class="header" id="head">
+    <div class="container header-cont">
+      <nav class="header-nav">
+        <div class="header-box-nav">
+          <a href="./index.html" target="_self" title="company logo">
+            <svg class="header-logo" width="159" height="68">
+              <use href="/paw-haven/assets/icons-BYc9LF7E.svg#logo"></use>
+            </svg>
+          </a>
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="#hero" title="Знайди друга"
+                >Знайди друга</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#activ" title="Про нас">Про нас</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quest" title="Часті запитання"
+                >Часті запитання</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#feedb" title="Історії успіху"
+                >Історії успіху</a
+              >
+            </li>
+          </ul>
+        </div>
+        <a class="frend-li" href="#tails" title="Взяти друга">Взяти друга</a>
+
+        <button
+          class="burger-btn"
+          type="button"
+          role="button"
+          id="data-burger-open"
+          data-menu-open
+        >
+          <svg class="burger-icon" width="24" height="24">
+            <use href="/paw-haven/assets/icons-BYc9LF7E.svg#menu"></use>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+</body>
 
 
     <main>
@@ -167,10 +207,51 @@
 </footer>
 
 
-    <div class="mob-menu-overlay">
-  <div class="mob-menu">
-    <!-- параграф треба видалити, це просто перевіряв пвдключення файла -->
-    <p>menu</p>
+    <div class="mobile-menu" id="mobile-menu" data-menu>
+  <div class="container mobile-menu-container">
+    <div class="mobile-menu-top">
+      <a href="index.html">
+        <svg class="header-logo" width="159.5" height="68.36">
+          <use href="/paw-haven/assets/icons-BYc9LF7E.svg#logo"></use>
+        </svg>
+      </a>
+      <button class="mobile-menu-close" id="data-burger-close" data-menu-close>
+        <svg class="svg-icon-close" width="24" height="24">
+          <use href="/paw-haven/assets/icons-BYc9LF7E.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu-bloc">
+      <nav class="mobile-menu-nav">
+        <ul class="mobile-nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="#hero" title="Знайди друга"
+              >Знайди друга</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#activ" title="Про нас">Про нас</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#quest" title="Часті запитання"
+              >Часті запитання</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#feedb" title="Історії успіху"
+              >Історії успіху</a
+            >
+          </li>
+
+          <li class="nav-exp">
+            <a class="nav-link-exp" href="#tails" title="Взяти друга"
+              >Взяти друга</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
 

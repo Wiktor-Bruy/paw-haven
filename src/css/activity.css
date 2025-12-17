@@ -1,13 +1,14 @@
-body {
-  font-family: 'Manrope', Arial, sans-serif;
-  background-color: #F6F4F1;
+.activity {
+  background-color: #f6f4f1;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
-.activity-cont {
+/* .activity-cont {
   max-width: 1280px;
   margin: 0 auto;
   padding: 60px 20px;
-}
+} */
 
 .section-title {
   color: var(--ColorScheme1-Text, rgba(2, 6, 10, 1));
@@ -60,7 +61,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   z-index: 1;
 }
 .slide-content {
@@ -89,8 +94,8 @@ body {
 
 .slider-controls {
   display: flex;
-    align-items: center;
-    padding: 22px 0;
+  align-items: center;
+  padding: 22px 0;
 }
 
 .slider-navigation {
@@ -100,7 +105,7 @@ body {
 }
 
 .slider-btn {
-width: 48px;
+  width: 48px;
   height: 48px;
   display: flex;
   flex-direction: row;
@@ -113,11 +118,11 @@ width: 48px;
   border-radius: 8px;
   background: rgba(238, 233, 227, 1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .slider-btn:hover:not(.swiper-button-disabled) {
-  background: #E8E8E0;
+  background: #e8e8e0;
   border-color: #000;
 }
 
@@ -132,19 +137,18 @@ width: 48px;
   height: 20px;
   stroke: #333;
   stroke-width: 2.5;
-  transition: stroke 0.3s ease;
-  
+  transition: stroke 250ms ease-in-out;
 }
 
 .slider-btn:hover:not(.swiper-button-disabled) svg {
-  fill: Color/Mariner Light;
+  stroke: Color/Mariner Light;
 }
 .slider-pagination {
   display: flex;
   justify-content: center;
   gap: 8px;
   align-items: center;
- margin-right: 163px;
+  /* margin-right: 163px; */
 }
 
 .slider-pagination .swiper-pagination-bullet {
@@ -160,7 +164,10 @@ width: 48px;
   height: 8px;
   background-color: #000;
 }
-.slider-pagination .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):not(.swiper-pagination-bullet-active-prev):not(.swiper-pagination-bullet-active-next) {
+.slider-pagination
+  .swiper-pagination-bullet:not(.swiper-pagination-bullet-active):not(
+    .swiper-pagination-bullet-active-prev
+  ):not(.swiper-pagination-bullet-active-next) {
   width: 4px;
   height: 4px;
   background-color: #d9d9d9;
@@ -170,7 +177,14 @@ width: 48px;
   width: 6px;
   height: 6px;
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 768px) {
+  #active-swiper-pagination {
+    position: static;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .slide-image {
     width: 704px;
     height: 404px;
@@ -223,7 +237,7 @@ width: 48px;
     right: -24px;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1440px) {
   .slide-image {
     width: 1312px;
     height: 753px;

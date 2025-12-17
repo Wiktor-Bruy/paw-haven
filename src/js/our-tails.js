@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import openModalCard from './modal-card.js';
 //-----------------------------------------------------------------Глобальні-змінні
 const tailsBtnLoad = document.querySelector('.tails-load-more');
 let tailsTotalPage;
@@ -216,6 +216,7 @@ function tailsKnowMore(event) {
     return;
   }
   console.log(JSON.parse(elem.dataset.obj));
+  openModalCard(JSON.parse(elem.dataset.obj));
 }
 //---------------------------------------------------------------------------------
 

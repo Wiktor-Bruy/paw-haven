@@ -26,7 +26,10 @@ questions.
 ## 📚 Libraries
 
 - Vanilla JavaScript
-- !!!ДОПОВНИТИ!!!
+- Accordion-js
+- Swiper.js
+- raty-js
+- sweetalert2/basiclightbox
 
 ## ▶️ How to Run Locally
 

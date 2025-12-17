@@ -1,8 +1,62 @@
-<footer class="footer" id="foot">
-  <div class="container footer-cont">
-    <!-- тут пропишете вміст футера, коментар можна видалити.
-     якщо будуть потрібні корективи до стилів контейнера, звертайтеся до класу - footer-cont
-     щоб не збити контейнер в інших секціях-->
-    <p>footer</p>
+<footer class="footer" id="footer">
+  <div class="footer-bg">
+    <div class="container footer-cont">
+      <div class="footer-inner">
+        <!-- лого -->
+        <a href="index.html" class="footer-logo">
+          <svg class="footer-logo-icon" viewBox="0 0 302 129.43">
+            <use href="./img/icons.svg#logo"></use>
+          </svg>
+        </a>
+        <!-- навігація -->
+        <nav class="footer-nav" aria-label="Навігація футера">
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item">
+              <a href="#hero" class="footer-nav-link">Про нас</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#tails" class="footer-nav-link">Знайти друга</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#quest" class="footer-nav-link">Часті питання</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="#feedb" class="footer-nav-link">Історії успіху</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- соц.лінки -->
+        <ul class="footer-socials">
+          <li>
+            <a
+              href="https://www.facebook.com/"
+              class="footer-social-link"
+              target="_blank"
+            >
+              <svg width="32" height="32" aria-hidden="true">
+                <use href="./img/icons.svg#facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/"
+              class="footer-social-link"
+              target="_blank"
+            >
+              <svg width="32" height="32" aria-hidden="true">
+                <use href="./img/icons.svg#instagram"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- розділювач -->
+    <div class="footer-divider"></div>
+    <!-- авт.права -->
+    <div class="container footer-copy-cont">
+      <p class="footer-copy">© 2025 Хатинка лапок. Всі права захищені.</p>
+    </div>
   </div>
 </footer>

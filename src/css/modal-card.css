@@ -1,3 +1,180 @@
-.modal-card {
-  background-color: violet;
+.modal-card-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  padding: 64px 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-in-out;
+
+  overflow: hidden;
+
+}
+
+.modal-card-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+.modal-card {  
+  background-color: #f6f4f1;;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  border-radius: 8px;
+  padding: 64px 20px;
+  width: 100%;
+  max-width: 335px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-height: calc(100vh - 128px);
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-card-img {
+border-radius: 8px;
+width: 295px;
+height: 295px;
+}
+
+.modal-card-info {}
+
+.modal-card-info-container{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.modal-card-info-subtitle {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #02060a;
+}
+
+.modal-card-info-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #02060a;
+}
+
+.modal-card-info-desc {
+  display: flex;
+  gap: 16px;
+}
+
+.modal-card-info-desc-text {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #02060a;
+}
+
+.modal-card-info-list {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.modal-card-info-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-card-info-list-item-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02060a;
+}
+
+.modal-card-info-list-item-text {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02060a;
+}
+
+.modal-card-info-btn{
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: 1px solid #88765c;
+    border-radius: 8px;
+    padding: 12px 24px;
+    width: 100%;
+    height: 45px;
+    margin: 0 auto;
+    background-color: #88765c;
+}
+
+.modal-card-close-btn{
+  background-color: inherit;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+}
+ 
+.id{
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+  .modal-card-overlay{
+    padding: 64px 32px;
+  }
+
+  .modal-card{
+    padding: 64px 32px;
+    flex-direction: row;
+    gap: 32px;
+    max-width: 704px;
+    align-items: flex-start;
+  }
+  .modal-card-img{
+    width: 304px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width:1440px) {
+.modal-card-overlay{
+  padding: 64px;
+}
+
+.modal-card{
+  padding: 64px;
+  max-width: 1312px;
+}
+
+  .modal-card-img{
+    width: 576px;
+    height: 450px; 
+  }
 }

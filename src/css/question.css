@@ -20,9 +20,7 @@
 }
 .question-item {
   padding: 20px 24px;
-  border-radius: 8px;
 }
-
 .question-list .question-item {
   background-color: var(--color-scheme-1-foreground);
 }
@@ -33,74 +31,18 @@
   line-height: 1.5;
   color: var(--color-scheme-1-text);
 }
-.answer-list {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  font-family: var(--font-family);
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--color-scheme-1-text);
-}
-
-
-.answer-list li,
-.answer-list-item li {
-  position: relative;
-  padding-left: 16px;
-  font-family: var(--font-family);
-  font-size: 14px;
-  line-height: 1.2;
-  color: var(--color-scheme-1-text);
-}
-
-.list--dotted {
-  list-style: none;
-}
-
-.list--dotted li {
-  position: relative;
-  padding-left: 16px;
-}
-
-.list--dotted li::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: var(--color-scheme-1-text);
-}
-
-.list--numbered {
-  counter-reset: step;
-  list-style: none;
-}
-
-.list--numbered .answer-item {
-  counter-increment: step;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-}
-
-.list--numbered .list-number::before {
-  content: counter(step) ".";
-  font-weight: 400;
-  min-width: 16px;
-  font-family: var(--font-family); 
-  text-align: right;
-}
-
-
 .answer-list-text {
   margin-bottom: 16px;
 }
-
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.answer-list-item {
+  position: relative;
+  padding-left: 20px;
+}
 .question-list-style {
   position: absolute;
   top: 10px;
@@ -128,14 +70,11 @@
 }
 
 /*---------------------------------------------------------------------------tablet*/
-@media screen and (min-width: 768px) {
 .question-name {
   margin-bottom: 80px;
 }
-}
 
 /*---------------------------------------------------------------------------laptop*/
-@media only screen and (min-width: 1440px) {
 .question {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -152,7 +91,6 @@
 }
 .question-list .question-item .question-answer .ac-text {
   font-size: 16px;
-}
 }
 
 /*------------------------------------------------------------------icons-from-list*/

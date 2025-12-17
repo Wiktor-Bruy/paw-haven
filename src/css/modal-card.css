@@ -140,6 +140,10 @@ height: 295px;
   width: 32px;
   height: 32px;
 }
+
+.modal-card-close-btn-svg{
+  fill: #02060a;
+}
  
 .id{
   display: none;

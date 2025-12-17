@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-
+import {openModal} from "./modal-input"
 
 const refs = {
     modal : document.querySelector('.modal-card'),
@@ -18,7 +18,7 @@ refs.modalOverlay.addEventListener('click', e => {
     if(e.target.closest('.modal-card-info-btn')){
        try {
         closeModal();
-        console.log(id.textContent);// function openModalInput
+        openModal(id.textContent);
        } catch (error) {
          Swal.fire({
             title: `Oops... 
@@ -65,7 +65,7 @@ function onEscPress(e){
 function renderModalCard ({name,image,age,species,behavior,healthStatus,description,gender,_id}) {
     const markup = ` 
     <button class="modal-card-close-btn">
-        <svg width="13" height="13" >
+        <svg width="13" height="13" class="modal-card-close-btn-svg">
         <use href="/img/icons.svg#close"></use>
         </svg>
     </button>

@@ -29,7 +29,7 @@ questions.
 - Accordion-js
 - Swiper.js
 - raty-js
-- sweetalert2/basiclightbox
+- sweetalert2
 
 ## ▶️ How to Run Locally
 

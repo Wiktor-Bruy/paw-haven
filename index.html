@@ -16,9 +16,9 @@
       href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css"
     />
     <script type="module" crossorigin src="/paw-haven/index.js"></script>
-    <link rel="modulepreload" crossorigin href="/paw-haven/assets/vendor-B5UTuJSL.js">
+    <link rel="modulepreload" crossorigin href="/paw-haven/assets/vendor-DlRMHGXh.js">
     <link rel="stylesheet" crossorigin href="/paw-haven/assets/vendor-DnGaGgwy.css">
-    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-CuTJRh94.css">
+    <link rel="stylesheet" crossorigin href="/paw-haven/assets/index-CA426DE3.css">
   </head>
   <body>
     <header class="header" id="head">
@@ -183,10 +183,62 @@
 </div>
 
 
-    <div class="modal-input-overlay">
+    <div class="modal-input-overlay is-hidden" id="modalinputOverlay">
   <div class="modal-input">
-    <!-- параграф треба видалити, це просто перевіряв пвдключення файла -->
-    <p>modal-input</p>
+    <button
+      class="modal-input-close"
+      type="button"
+      id="modalinputClose"
+      aria-label="Close modal"
+    >
+      <svg class="modal-input-close-icon" width="24" height="24">
+        <use href="../img/icons.svg#close"></use>
+      </svg>
+    </button>
+
+    <h2 class="modal-input-title">Залишіть заявку на знайомство</h2>
+
+    <form class="modal-input-form" id="modalinputForm" novalidate>
+      
+      <label class="modal-input-form-label">
+        Імʼя*
+        <input
+          class="modal-input-text"
+          name="name"
+          type="text"
+          placeholder="Андрій"
+          minlength="2"
+          required/>
+        <span class="modal-input-error"></span>
+      </label>
+
+      <label class="modal-input-form-label">
+        Телефон*
+        <input
+          class="modal-input-tel"
+          name="phone"
+          type="tel"
+          placeholder="+38 (095) 555 99 22"
+          required/>
+        <span class="modal-input-error"></span>
+      </label>
+
+      <label class="modal-input-form-label">
+        Коментар
+        <textarea
+          name="comment"
+          placeholder="Напишіть ваш коментар"
+          minlength="5">
+        </textarea>
+        <span class="modal-input-error"></span>
+      </label>
+
+      <button
+        type="submit"
+        class="modal-input-form-submitbtn">
+        Надіслати
+      </button>
+    </form>
   </div>
 </div>
 

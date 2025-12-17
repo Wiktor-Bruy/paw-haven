@@ -1,3 +1,197 @@
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-input-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
 .modal-input {
-  background-color: chartreuse;
+  width: 100%;
+  max-width: 375px;
+  background: #f6f4f1;
+  border-radius: 8px;
+  padding: 64px 20px;
+  position: relative;
+}
+
+.modal-input-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-input-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+}
+
+.modal-input-form-label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 24px;
+  gap: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #02060a;
+}
+
+.modal-input-form-label input,
+.modal-input-form-label textarea {
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  background: rgba(2, 6, 10, 0.05);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(2, 6, 10, 0.6);
+}
+
+.modal-input-form-label textarea {
+  min-height: 180px;
+  resize: none;
+}
+
+
+.modal-input-form-label input:focus,
+.modal-input-form-label textarea:focus {
+  outline: none;
+  border: 1px solid #88765c;
+  background: #fff;
+  color: #02060a;
+}
+
+.modal-input-form-label input::placeholder,
+.modal-input-form-label textarea::placeholder {
+  color: rgba(2, 6, 10, 0.4);
+}
+
+.modal-input-form-label.error input,
+.modal-input-form-label.error textarea {
+  border: 1px solid #e5484d;
+  background: #fff;
+  color: #02060a;
+}
+
+.modal-input-form-label.error input::placeholder,
+.modal-input-form-label.error textarea::placeholder {
+  color: #e5484d;
+}
+
+.modal-input-error {
+  font-size: 12px;
+  line-height: 150%;
+  color: #e5484d;
+}
+
+.modal-input-form-label input:disabled,
+.modal-input-form-label textarea:disabled {
+  background: rgba(2, 6, 10, 0.05);
+  color: rgba(2, 6, 10, 0.3);
+  cursor: not-allowed;
+}
+
+
+.modal-input-form-submitbtn {
+  margin-top: 24px;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 12px 24px;
+  width: 100%;
+  height: 45px;
+  background: #88765c;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 250ms ease-in-out;
+}
+
+.modal-input-form-submitbtn:hover {
+  border: 1px solid #02060a;
+  background: #c3b49d;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-input {
+    max-width: 520px;
+    padding: 72px 32px;
+  }
+
+  .modal-input-title {
+    font-size: 40px;
+  }
+
+  .modal-input-form-label {
+    padding-top: 28px;
+    font-size: 15px;
+  }
+
+  .modal-input-form-label input,
+  .modal-input-form-label textarea {
+    height: 44px;
+    font-size: 15px;
+  }
+
+  .modal-input-form-label textarea {
+    min-height: 200px;
+  }
+
+  .modal-input-form-submitbtn {
+    height: 48px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal-input {
+    max-width: 640px;
+    padding: 80px 48px;
+  }
+
+  .modal-input-title {
+    font-size: 44px;
+  }
+
+  .modal-input-form-label {
+    padding-top: 32px;
+    font-size: 16px;
+  }
+
+  .modal-input-form-label input,
+  .modal-input-form-label textarea {
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .modal-input-form-label textarea {
+    min-height: 220px;
+  }
+
+  .modal-input-form-submitbtn {
+    height: 52px;
+    font-size: 16px;
+  }
 }

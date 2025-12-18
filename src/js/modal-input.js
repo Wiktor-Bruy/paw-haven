@@ -130,6 +130,7 @@ async function onFormSubmit(e) {
 
   const name = form.elements.name.value.trim();
   const phoneRaw = form.elements.phone.value;
+
   const commentRaw = form.elements.comment.value.trim();
   const animalId = currentAnimalId;
 
@@ -143,13 +144,7 @@ async function onFormSubmit(e) {
     return;
   }
 
-  const phoneDigits = phoneRaw.replace(/\D/g, '');
-  const phone =
-    phoneDigits.length === 9
-      ? '+380' + phoneDigits
-      : phoneDigits.startsWith('380')
-      ? '+' + phoneDigits
-      : '+' + phoneDigits;
+  const phone = phoneRaw.slice(1);
 
   const comment = commentRaw || '-';
 
@@ -160,11 +155,9 @@ async function onFormSubmit(e) {
     animalId: String(animalId),
   };
 
-  console.log('✅ Form Data to send:', formData);
-
   try {
     const response = await axios.post(
-      'https://furniture-store.b.goit.study/api/orders',
+      'https://paw-hut.b.goit.study/api/orders',
       formData,
       {
         headers: {
@@ -173,23 +166,18 @@ async function onFormSubmit(e) {
       }
     );
 
-    console.log('✅ Response:', response.data);
-
     Swal.fire({
       icon: 'success',
       title: 'Заявку надіслано',
-      text: `Номер вашого замовлення: ${response.data.id}`,
+      text: `Номер вашого замовлення: ${response.data.orderNum}`,
       timer: 2500,
       showConfirmButton: false,
     });
 
     closeModal();
   } catch (error) {
-    console.error('❌ Axios error:', error);
-
     let errorMsg = 'Спробуйте ще раз пізніше';
     if (error.response) {
-      console.error('Server response:', error.response.data);
       if (error.response.data?.message) errorMsg = error.response.data.message;
     }
 

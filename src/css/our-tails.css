@@ -226,6 +226,13 @@
     width: 335px;
   }
 }
+@media (max-width: 1439px) {
+  .tails-button-list {
+    max-width: 579px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+}
 
 /*----------------------------------------------------------------------------Laptop*/
 @media (min-width: 1440px) {

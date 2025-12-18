@@ -46,9 +46,6 @@
   height: 295px;
 }
 
-.modal-card-info {
-}
-
 .modal-card-info-container {
   display: flex;
   flex-direction: column;

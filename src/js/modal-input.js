@@ -130,8 +130,6 @@ async function onFormSubmit(e) {
 
   const name = form.elements.name.value.trim();
   const phoneRaw = form.elements.phone.value;
-  // const phoneRaw = phoneRawOld.slice(1);
-  // console.log(phoneRaw);
 
   const commentRaw = form.elements.comment.value.trim();
   const animalId = currentAnimalId;
@@ -146,13 +144,7 @@ async function onFormSubmit(e) {
     return;
   }
 
-  // const phoneDigits = phoneRaw.replace(/\D/g, '');
   const phone = phoneRaw.slice(1);
-  // phoneDigits.length === 9
-  //   ? '+380' + phoneDigits
-  //   : phoneDigits.startsWith('380')
-  //   ? '+' + phoneDigits
-  //   : '+' + phoneDigits;
 
   const comment = commentRaw || '-';
 
@@ -163,8 +155,6 @@ async function onFormSubmit(e) {
     animalId: String(animalId),
   };
 
-  console.log('✅ Form Data to send:', formData);
-
   try {
     const response = await axios.post(
       'https://paw-hut.b.goit.study/api/orders',
@@ -174,9 +164,7 @@ async function onFormSubmit(e) {
           'Content-Type': 'application/json',
         },
       }
-    ); // https://furniture-store.b.goit.study/api/orders
-
-    console.log('✅ Response:', response.data);
+    );
 
     Swal.fire({
       icon: 'success',
@@ -188,11 +176,8 @@ async function onFormSubmit(e) {
 
     closeModal();
   } catch (error) {
-    console.error('❌ Axios error:', error);
-
     let errorMsg = 'Спробуйте ще раз пізніше';
     if (error.response) {
-      console.error('Server response:', error.response.data);
       if (error.response.data?.message) errorMsg = error.response.data.message;
     }
 

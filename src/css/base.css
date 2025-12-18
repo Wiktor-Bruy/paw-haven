@@ -48,5 +48,5 @@
 }
 body {
   font-family: var(--font-family);
-  color: (--color-scheme-1-text);
+  color: var(--color-scheme-1-text);
 }

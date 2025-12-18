@@ -139,7 +139,7 @@ function tailsRenderCards(arr) {
     const btn = document.createElement('button');
     btn.classList.add('tails-know-more');
     btn.type = 'button';
-    btn.textContent = 'Дізнвтися більше';
+    btn.textContent = 'Дізнатися більше';
     btn.setAttribute('data-obj', JSON.stringify(elem));
     item.append(btn);
 
@@ -215,7 +215,6 @@ function tailsKnowMore(event) {
   if (elem.tagName !== 'BUTTON') {
     return;
   }
-  console.log(JSON.parse(elem.dataset.obj));
   openModalCard(JSON.parse(elem.dataset.obj));
 }
 //---------------------------------------------------------------------------------

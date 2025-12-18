@@ -64,6 +64,7 @@
   padding: 12px;
 }
 .tails-gallery-img {
+  height: 245px;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 16px;
@@ -112,6 +113,7 @@
   line-height: 1.5;
 }
 .tails-know-more {
+  background-color: transparent;
   width: 100%;
   height: 40px;
   display: flex;
@@ -138,7 +140,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  width: 335px;
+  width: 100%;
   height: 45px;
   background-color: var(--color-mariner-dark);
   margin: 0 auto;
@@ -220,8 +222,12 @@
   .tails-gallery-item {
     width: calc((100% - 32px) / 2);
   }
+  .tails-load-more {
+    width: 335px;
+  }
 }
 
+/*----------------------------------------------------------------------------Laptop*/
 @media (min-width: 1440px) {
   .our-tails {
     padding-top: 80px;
@@ -235,5 +241,31 @@
   }
   .tails-gallery-item {
     width: calc((100% - 64px) / 3);
+  }
+  .tails-gallery-img {
+    height: 309px;
+  }
+  .tails-gallery-species {
+    font-size: 12px;
+  }
+  .tails-gallery-name {
+    font-size: 24px;
+  }
+  .tails-categori-item {
+    font-size: 12px;
+  }
+  .tails-gallery-span {
+    font-size: 12px;
+  }
+  .tails-gallery-text {
+    font-size: 14px;
+  }
+  .tails-know-more {
+    font-size: 16px;
+  }
+  .tails-load-more {
+    width: 192px;
+    height: 48px;
+    font-size: 16px;
   }
 }

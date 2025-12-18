@@ -167,21 +167,21 @@ async function onFormSubmit(e) {
 
   try {
     const response = await axios.post(
-      'https://furniture-store.b.goit.study/api/orders',
+      'https://paw-hut.b.goit.study/api/orders',
       formData,
       {
         headers: {
           'Content-Type': 'application/json',
         },
       }
-    );
+    ); // https://furniture-store.b.goit.study/api/orders
 
     console.log('✅ Response:', response.data);
 
     Swal.fire({
       icon: 'success',
       title: 'Заявку надіслано',
-      text: `Номер вашого замовлення: ${response.data.id}`,
+      text: `Номер вашого замовлення: ${response.data.orderNum}`,
       timer: 2500,
       showConfirmButton: false,
     });

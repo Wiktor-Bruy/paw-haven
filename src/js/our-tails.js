@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import openModalCard from './modal-card.js';
 //-----------------------------------------------------------------Глобальні-змінні
 const tailsBtnLoad = document.querySelector('.tails-load-more');
@@ -22,9 +23,10 @@ function tailsGetCategories() {
       tailsRenderCategories(tailCategories);
     })
     .catch(err => {
-      alert(
-        `Вибачте, нажаль при запиті категорій сталася помилка ${err}. Спробуйте знов.`
-      );
+      Swal.fire({
+        title: `Вибачте, нажаль при запиті категорій сталася помилка ${err} Спробуйте знов.`,
+        icon: 'error',
+      });
     });
 }
 
@@ -68,9 +70,10 @@ function tailsGetArrAnimals() {
       }
     })
     .catch(er => {
-      alert(
-        `Вибачте, за сталася помилка в запиті карток ${er}. Спробуйте оновити сторінку.`
-      );
+      Swal.fire({
+        title: `Вибачте, нажаль при запиті карток тарин сталася помилка ${err} Спробуйте знов.`,
+        icon: 'error',
+      });
       tailsToggleLoader();
     });
 }
@@ -192,9 +195,10 @@ function onClickLoadMore() {
       tailsToggleLoader();
     })
     .catch(er => {
-      alert(
-        `Вибачте, за сталася помилка в запиті карток ${er}. Спробуйте оновити сторінку.`
-      );
+      Swal.fire({
+        title: `Вибачте, нажаль при запиті карток тарин сталася помилка ${err} Спробуйте знов.`,
+        icon: 'error',
+      });
       tailsToggleLoader();
     });
 

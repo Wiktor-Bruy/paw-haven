@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import { openModal } from './modal-input';
 
 const refs = {
-  modal: document.querySelector('.modal-card'),
+  modal: document.querySelector('.modal-card-box'),
   modalOverlay: document.querySelector('.modal-card-overlay'),
 };
 
@@ -36,6 +36,7 @@ export default function openModalCard(data) {
     renderModalCard(data);
     refs.modalOverlay.classList.add('is-open');
     document.addEventListener('keydown', onEscPress);
+    document.body.style.overflow = 'hidden';
   } catch (error) {
     Swal.fire({
       title: `Oops...
@@ -48,6 +49,7 @@ export default function openModalCard(data) {
 function closeModal() {
   refs.modalOverlay.classList.remove('is-open');
   document.removeEventListener('keydown', onEscPress);
+  document.body.style.overflow = '';
 }
 
 function onEscPress(e) {
@@ -67,12 +69,7 @@ function renderModalCard({
   gender,
   _id,
 }) {
-  const markup = ` 
-    <button class="modal-card-close-btn">
-        <svg width="13" height="13" class="modal-card-close-btn-svg">
-        <use href="/img/icons.svg#close"></use>
-        </svg>
-    </button>
+  const markup = `
     <img class="modal-card-img" src="${image}" alt="">
     <div class="modal-card-info">
       <div class="modal-card-info-container">
@@ -89,7 +86,7 @@ function renderModalCard({
           <p class="modal-card-info-list-item-text">${description}</p>
         </li>
         <li class="modal-card-info-list-item">
-          <h2 class="modal-card-info-list-item-title">Здоров’я:</h2>
+          <h2 class="modal-card-info-list-item-title">Здоров'я:</h2>
           <p class="modal-card-info-list-item-text">${healthStatus}</p>
         </li>
         <li class="modal-card-info-list-item">

@@ -130,6 +130,9 @@ async function onFormSubmit(e) {
 
   const name = form.elements.name.value.trim();
   const phoneRaw = form.elements.phone.value;
+  // const phoneRaw = phoneRawOld.slice(1);
+  // console.log(phoneRaw);
+
   const commentRaw = form.elements.comment.value.trim();
   const animalId = currentAnimalId;
 
@@ -143,13 +146,13 @@ async function onFormSubmit(e) {
     return;
   }
 
-  const phoneDigits = phoneRaw.replace(/\D/g, '');
-  const phone =
-    phoneDigits.length === 9
-      ? '+380' + phoneDigits
-      : phoneDigits.startsWith('380')
-      ? '+' + phoneDigits
-      : '+' + phoneDigits;
+  // const phoneDigits = phoneRaw.replace(/\D/g, '');
+  const phone = phoneRaw.slice(1);
+  // phoneDigits.length === 9
+  //   ? '+380' + phoneDigits
+  //   : phoneDigits.startsWith('380')
+  //   ? '+' + phoneDigits
+  //   : '+' + phoneDigits;
 
   const comment = commentRaw || '-';
 

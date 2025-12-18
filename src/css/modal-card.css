@@ -30,14 +30,16 @@
   padding: 64px 20px;
   width: 100%;
   max-width: 335px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
   overflow-x: hidden;
   margin: 0 auto;
   max-height: calc(100vh - 128px);
   overflow-y: auto;
   position: relative;
+}
+.modal-card-box {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .modal-card-img {
@@ -164,10 +166,11 @@
   }
 
   .modal-card {
-    padding: 64px 32px;
+    max-width: 704px;
+  }
+  .modal-card-box {
     flex-direction: row;
     gap: 32px;
-    max-width: 704px;
     align-items: flex-start;
   }
   .modal-card-img {

@@ -1,69 +1,73 @@
-import Swal from "sweetalert2";
-import {openModal} from "./modal-input"
+import Swal from 'sweetalert2';
+import { openModal } from './modal-input';
 
 const refs = {
-    modal : document.querySelector('.modal-card'),
-    modalOverlay: document.querySelector('.modal-card-overlay')
-}
+  modal: document.querySelector('.modal-card'),
+  modalOverlay: document.querySelector('.modal-card-overlay'),
+};
 
 refs.modalOverlay.addEventListener('click', e => {
+  const id = document.querySelector('.id');
 
-    const id = document.querySelector('.id');
+  if (e.target.closest('.modal-card-close-btn')) {
+    closeModal();
+  }
 
-
-    if (e.target.closest('.modal-card-close-btn')){
-        closeModal();
-    }
-
-    if(e.target.closest('.modal-card-info-btn')){
-       try {
-        closeModal();
-        openModal(id.textContent);
-       } catch (error) {
-         Swal.fire({
-            title: `Oops... 
+  if (e.target.closest('.modal-card-info-btn')) {
+    try {
+      closeModal();
+      openModal(id.textContent);
+    } catch (error) {
+      Swal.fire({
+        title: `Oops... 
             ${error}`,
-            icon: 'error'
-         })
-       }
-    } 
-
-    if(e.target === refs.modalOverlay){
-        closeModal();    
+        icon: 'error',
+      });
     }
-}
-);
+  }
 
-export default function openModalCard (data){
+  if (e.target === refs.modalOverlay) {
+    closeModal();
+  }
+});
 
-   try{ renderModalCard(data);
+export default function openModalCard(data) {
+  try {
+    renderModalCard(data);
     refs.modalOverlay.classList.add('is-open');
     document.addEventListener('keydown', onEscPress);
-    
-   }
-    catch (error){
-         Swal.fire({
-        title: `Oops...
+  } catch (error) {
+    Swal.fire({
+      title: `Oops...
          ${error}`,
-        icon: 'error',
-    });}
+      icon: 'error',
+    });
+  }
 }
 
 function closeModal() {
-    refs.modalOverlay.classList.remove('is-open');
-    document.removeEventListener('keydown', onEscPress);
+  refs.modalOverlay.classList.remove('is-open');
+  document.removeEventListener('keydown', onEscPress);
 }
 
-function onEscPress(e){
-
-        if(e.key === 'Escape'){
-            closeModal();
-        }
+function onEscPress(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
 }
 
-
-function renderModalCard ({name,image,age,species,behavior,healthStatus,description,gender,_id}) {
-    const markup = ` 
+function renderModalCard({
+  name,
+  image,
+  age,
+  species,
+  behavior,
+  healthStatus,
+  description,
+  gender,
+  _id,
+}) {
+  const markup = ` 
     <button class="modal-card-close-btn">
         <svg width="13" height="13" class="modal-card-close-btn-svg">
         <use href="/img/icons.svg#close"></use>
@@ -95,7 +99,7 @@ function renderModalCard ({name,image,age,species,behavior,healthStatus,descript
       </ul>
       <button class="modal-card-info-btn" type="button">Взяти додому</button>
       <p class="id">${_id}</p>
-    </div>`
+    </div>`;
 
-    refs.modal.innerHTML = markup;
+  refs.modal.innerHTML = markup;
 }

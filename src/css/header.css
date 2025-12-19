@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   background: var(--color-scheme-1-background);
 }
 .header-box-nav {
@@ -93,4 +94,52 @@
   .burger-btn {
     display: none;
   }
+}
+
+/*-----------------------------------------------------------------------------Btn-Up*/
+.header-button-up {
+  z-index: 100;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  border: 1px solid var(--color-mariner-darkest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 160px;
+  height: 45px;
+  background-color: var(--color-mariner-darkest);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-white);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out,
+    box-shadow 250ms ease-in-out, opacity 250ms ease-in-out,
+    visibility 250ms ease-in-out;
+}
+.header-button-up:hover,
+.header-button-up:focus {
+  background-color: var(--color-mariner-lighter);
+  color: var(--color-scheme-1-text);
+}
+.header-button-up:active {
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+.header-button-up.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.header-observer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 700px;
+  z-index: -10;
+  transform: translateY(100%);
 }

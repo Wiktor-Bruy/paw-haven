@@ -244,3 +244,19 @@ tailsBtnLoad.addEventListener('click', onClickLoadMore);
 const tailsGallery = document.querySelector('.tails-gallery');
 tailsGallery.addEventListener('click', tailsKnowMore);
 //---------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------Кнопка-вгору
+const tailsUpIs = document.querySelector('.tails-observer');
+const tailsUpBtn = document.querySelector('.tails-button-up');
+
+const observerTails = new IntersectionObserver(toggleTailsBtnUp);
+observerTails.observe(tailsUpIs);
+
+function toggleTailsBtnUp(arr) {
+  const tailsObs = arr[0];
+  if (tailsObs.isIntersecting) {
+    tailsUpBtn.classList.remove('is-open');
+  } else {
+    tailsUpBtn.classList.add('is-open');
+  }
+}

@@ -260,3 +260,5 @@ function toggleTailsBtnUp(arr) {
     tailsUpBtn.classList.add('is-open');
   }
 }
+
+//------------------------------------------------------------------------Пагінація

@@ -3,7 +3,8 @@ import Swal from 'sweetalert2';
 import openModalCard from './modal-card.js';
 //-----------------------------------------------------------------Глобальні-змінні
 
-const tailPagBox = document.querySelector('.tails-pagin-box');
+const tailSection = document.querySelector('.our-tails');
+const tailPagBtnBox = document.querySelector('.tails-pag-list');
 const tailBtnLeft = document.querySelector('#tail-btn-left');
 const tailBtnRight = document.querySelector('#tail-btn-right');
 
@@ -75,11 +76,7 @@ function tailsGetArrAnimals() {
       }
 
       //----------------------------------------------------------------------------------pagin
-      if (tailsSearchParams.page >= tailsTotalPage) {
-        tailPagBox.classList.add('tails-none');
-      } else {
-        tailPagBox.classList.remove('tails-none');
-      }
+
       if (tailsSearchParams.page === 1) {
         tailBtnLeft.setAttribute('disabled', '');
       } else {
@@ -297,6 +294,7 @@ function renderPaginBox(curr, total) {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.classList.add('tails-pagin-btn-page');
+      btn.setAttribute('data-page', `${i}`);
       btn.textContent = i;
       if (i === curr) {
         btn.setAttribute('disabled', '');
@@ -438,4 +436,43 @@ function renderPaginBox(curr, total) {
       pageBox.append(itemTt);
     }
   }
+}
+
+tailPagBtnBox.addEventListener('click', onClickPag);
+tailBtnLeft.addEventListener('click', onClickLeft);
+tailBtnRight.addEventListener('click', onClickRight);
+
+function onClickLeft() {
+  if (tailsSearchParams === 1) {
+    return;
+  }
+  const gallery = document.querySelector('.tails-gallery');
+  gallery.innerHTML = '';
+  tailsSearchParams.page -= 1;
+  tailsGetArrAnimals();
+  tailSection.scrollIntoView();
+}
+
+function onClickRight() {
+  if (tailsSearchParams === tailsTotalPage) {
+    return;
+  }
+  const gallery = document.querySelector('.tails-gallery');
+  gallery.innerHTML = '';
+  tailsSearchParams.page += 1;
+  tailsGetArrAnimals();
+  tailSection.scrollIntoView();
+}
+
+function onClickPag(event) {
+  const elem = event.target;
+  const page = elem.dataset.page;
+  if (page === 'dis') {
+    return;
+  }
+  tailsSearchParams.page = +page;
+  const gallery = document.querySelector('.tails-gallery');
+  gallery.innerHTML = '';
+  tailsGetArrAnimals();
+  tailSection.scrollIntoView();
 }

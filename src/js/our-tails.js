@@ -2,6 +2,11 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import openModalCard from './modal-card.js';
 //-----------------------------------------------------------------Глобальні-змінні
+
+const tailPagBox = document.querySelector('.tails-pagin-box');
+const tailBtnLeft = document.querySelector('#tail-btn-left');
+const tailBtnRight = document.querySelector('#tail-btn-right');
+
 const tailsBtnLoad = document.querySelector('.tails-load-more');
 let tailsTotalPage;
 let tailsTotalItems;
@@ -68,6 +73,25 @@ function tailsGetArrAnimals() {
       } else {
         tailsBtnLoad.classList.remove('tails-none');
       }
+
+      //----------------------------------------------------------------------------------pagin
+      if (tailsSearchParams.page >= tailsTotalPage) {
+        tailPagBox.classList.add('tails-none');
+      } else {
+        tailPagBox.classList.remove('tails-none');
+      }
+      if (tailsSearchParams.page === 1) {
+        tailBtnLeft.setAttribute('disabled', '');
+      } else {
+        tailBtnLeft.removeAttribute('disabled');
+      }
+      if (tailsSearchParams.page === tailsTotalPage) {
+        tailBtnRight.setAttribute('disabled', '');
+      } else {
+        tailBtnRight.removeAttribute('disabled');
+      }
+      renderPaginBox(tailsSearchParams.page, tailsTotalPage);
+      //-----------------------------------------------------------------------------------------
     })
     .catch(er => {
       Swal.fire({
@@ -262,3 +286,156 @@ function toggleTailsBtnUp(arr) {
 }
 
 //------------------------------------------------------------------------Пагінація
+
+function renderPaginBox(curr, total) {
+  const pageBox = document.querySelector('.tails-pag-list');
+
+  if (total <= 3) {
+    let btnList = [];
+    for (let i = 1; i <= total; i++) {
+      const item = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.classList.add('tails-pagin-btn-page');
+      btn.textContent = i;
+      if (i === curr) {
+        btn.setAttribute('disabled', '');
+      }
+      item.append(btn);
+      btnList.push(item);
+    }
+    pageBox.innerHTML = '';
+    pageBox.append(...btnList);
+  } else {
+    if (curr <= 3) {
+      pageBox.innerHTML = '';
+      let btnList = [];
+      for (let i = 1; i <= 3; i++) {
+        const item = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.classList.add('tails-pagin-btn-page');
+        btn.textContent = i;
+        if (i === curr) {
+          btn.setAttribute('disabled', '');
+        }
+        btn.setAttribute('data-page', `${i}`);
+        item.append(btn);
+        btnList.push(item);
+      }
+      pageBox.append(...btnList);
+
+      const itemN = document.createElement('li');
+      const btnN = document.createElement('button');
+      btnN.setAttribute('data-page', 'dis');
+      btnN.classList.add('tails-pagin-btn-none');
+      btnN.textContent = '...';
+      itemN.append(btnN);
+
+      pageBox.append(itemN);
+
+      const itemT = document.createElement('li');
+      const btnT = document.createElement('button');
+      btnT.type = 'button';
+      btnT.setAttribute('data-page', `${total}`);
+      btnT.classList.add('tails-pagin-btn-page');
+      btnT.textContent = `${total}`;
+      itemT.append(btnT);
+
+      pageBox.append(itemT);
+    } else if (curr >= total - 2) {
+      pageBox.innerHTML = '';
+
+      const itemT = document.createElement('li');
+      const btnT = document.createElement('button');
+      btnT.type = 'button';
+      btnT.setAttribute('data-page', '1');
+      btnT.classList.add('tails-pagin-btn-page');
+      btnT.textContent = '1';
+      itemT.append(btnT);
+
+      pageBox.append(itemT);
+
+      const itemN = document.createElement('li');
+      const btnN = document.createElement('button');
+      btnN.setAttribute('data-page', 'dis');
+      btnN.classList.add('tails-pagin-btn-none');
+      btnN.textContent = '...';
+      itemN.append(btnN);
+
+      pageBox.append(itemN);
+
+      let btnList = [];
+      for (let i = total - 2; i <= total; i++) {
+        const item = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.classList.add('tails-pagin-btn-page');
+        btn.textContent = i;
+        if (i === curr) {
+          btn.setAttribute('disabled', '');
+        }
+        btn.setAttribute('data-page', `${i}`);
+        item.append(btn);
+        btnList.push(item);
+      }
+      pageBox.append(...btnList);
+    } else {
+      pageBox.innerHTML = '';
+
+      const itemT = document.createElement('li');
+      const btnT = document.createElement('button');
+      btnT.type = 'button';
+      btnT.setAttribute('data-page', '1');
+      btnT.classList.add('tails-pagin-btn-page');
+      btnT.textContent = '1';
+      itemT.append(btnT);
+
+      pageBox.append(itemT);
+
+      const itemN = document.createElement('li');
+      const btnN = document.createElement('button');
+      btnN.setAttribute('data-page', 'dis');
+      btnN.classList.add('tails-pagin-btn-none');
+      btnN.textContent = '...';
+      itemN.append(btnN);
+
+      pageBox.append(itemN);
+
+      let btnList = [];
+      for (let i = curr - 1; i <= curr + 1; i++) {
+        const item = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.classList.add('tails-pagin-btn-page');
+        btn.textContent = i;
+        if (i === curr) {
+          btn.setAttribute('disabled', '');
+        }
+        btn.setAttribute('data-page', `${i}`);
+        item.append(btn);
+        btnList.push(item);
+      }
+      pageBox.append(...btnList);
+
+      const itemNn = document.createElement('li');
+      const btnNn = document.createElement('button');
+      btnNn.setAttribute('data-page', 'dis');
+      btnNn.classList.add('tails-pagin-btn-none');
+      btnNn.textContent = '...';
+      itemNn.append(btnNn);
+
+      pageBox.append(itemNn);
+
+      const itemTt = document.createElement('li');
+      const btnTt = document.createElement('button');
+      btnTt.type = 'button';
+      btnTt.setAttribute('data-page', `${total}`);
+      btnTt.classList.add('tails-pagin-btn-page');
+      btnTt.textContent = total;
+      itemTt.append(btnTt);
+
+      pageBox.append(itemTt);
+    }
+  }
+}

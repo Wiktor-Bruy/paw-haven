@@ -12,5 +12,36 @@
     <ul class="tails-gallery"></ul>
     <div class="tails-loader tails-none"></div>
     <button class="tails-load-more" type="button">Показати більше</button>
+
+    <div class="tails-pagin-box">
+      <button
+        class="tails-pagin-btn"
+        id="tail-btn-left"
+        type="button"
+        data-pag="left"
+      >
+        <svg width="24" height="24">
+          <use href="../img/icons.svg#arrow-left"></use>
+        </svg>
+      </button>
+      <ul class="tails-pag-list">
+        <li><button class="tails-pagin-btn-page" type="button">1</button></li>
+        <li><button class="tails-pagin-btn-none">...</button></li>
+        <li><button class="tails-pagin-btn-page" type="button">4</button></li>
+      </ul>
+      <button
+        class="tails-pagin-btn"
+        id="tail-btn-right"
+        type="button"
+        data-pag="right"
+      >
+        <svg width="24" height="24">
+          <use href="../img/icons.svg#arrow-right"></use>
+        </svg>
+      </button>
+    </div>
+
+    <a class="tails-button-up" href="#tails" data-name="tail">До категорій</a>
+    <div class="tails-observer"></div>
   </div>
 </section>
